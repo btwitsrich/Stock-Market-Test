@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>JKS</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" sizes="16x16" href="{{ url_for('static', filename='logo-2.png') }}" />
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font-awesome.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='simple-line-icons.css') }}" media="screen" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='et-line-font.css') }}">
+
+  <!-- MENU CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='menuzord.css') }}">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Responsive -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
+
+  <!-- Animate.min -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animate.min.css') }}">
+</head>
+
+<body>
+
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-fixed-top transparrent-bg">
+    <div class="container">
+      <div id="menuzord" class="menuzord red">
+        <a href="http://localhost/www/wordpress-5.6.2/wordpress/" class="menuzord-brand">
+          <img src="{{ url_for('static', filename='logo-2.png') }}" alt="Logo" />
+        </a>
+        <ul class="menuzord-menu mp_menu">
+          <li class="active"><a href="http://localhost/www/wordpress-5.6.2/wordpress/">HOME</a></li>
+          <li><a href="http://localhost/www/wordpress-5.6.2/wordpress/dashboard">DASHBOARD</a></li>
+          <li><a href="http://localhost/www/wordpress-5.6.2/wordpress/know-more/">ABOUT</a></li>
+          <li><a href="http://localhost/www/wordpress-5.6.2/wordpress/home-2/#contact">CONTACT US</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END Nav Bar -->
+
+  <!-- Header -->
+  <div id="home" class="bg-inner low-back-gradient-inner">
+    <div class="text-con-inner low-back-up">
+      <div class="container">
+        <div style="padding-top: 40px" class="row">
+          <div class="lead col-lg-12 col-xm-12 text-center">
+            <h1><span class="top-heading-inner">PREDICT THE FUTURE</span> </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Header -->
+
+  <!-- Login -->
+  <div class="login_page login_solid_bg">
+    <div class="container">
+      <div class="log_in_logo text-center">
+        <img style="height: 250px" src="{{ url_for('static', filename='tile7.png') }}" alt="Login Logo">
+      </div>
+      <div class="log_in_box">
+        <form class="login" action="{{ url_for('insertintotable') }}" method="POST">
+          <div class="login_title">
+            <h2>PLEASE ENTER A STOCK SYMBOL</h2>
+            {% if not_found %}
+            <div class="alert alert-danger" role="alert">
+              Stock Symbol (Ticker) Not Found. Please Enter a Valid Stock Symbol.
+            </div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="nm" placeholder="Company Stock Symbol">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-login">PREDICT THE FUTURE</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- End Login -->
+
+  <!-- Footer Start -->
+  <div class="footer-section-area padding-top-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <img src="{{ url_for('static', filename='logo-2.png') }}" alt="JKS Logo" />
+          <p class="white">JKS was started with a common goal of serving the finance community while they make transitions. All our team members bring unique expertise and experience to the table.</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="title">
+            <h3>Contact Us</h3>
+          </div>
+          <ul>
+            <li><i class="fa fa-map-marker fa-2x"></i> JKS, Office 206, Hubtown Solaris, Mumbai, Maharashtra, India</li>
+            <li><i class="fa fa-envelope-o fa-2x"></i> info.bom@jks.com</li>
+            <li><i class="fa fa-phone fa-2x"></i> +91 98 19384052</li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="title">
+            <h3>Quick Links</h3>
+          </div>
+          <ul>
+            <li><a href="#"><i class="fa fa-arrow-right"></i> HOME</a></li>
+            <li><a href="#"><i class="fa fa-arrow-right"></i> DASHBOARD</a></li>
+            <li><a href="#"><i class="fa fa-arrow-right"></i> ABOUT</a></li>
+            <li><a href="#"><i class="fa fa-arrow-right"></i> CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="title">
+            <h3>LOCATION</h3>
+          </div>
+          <div class="our-service">
+            <iframe src="https://www.google.com/maps/embed?..." width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="false"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer -->
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='menuzord.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
